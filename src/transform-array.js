@@ -22,9 +22,7 @@ module.exports = function transform(arr) {
       }else{
         if(arr[i + 2] === "--discard-prev" || arr[i + 2] === '--double-prev'){
           i+=2
-          console.log("suka")
         }else{
-        console.log("blyadd")
           i++;
         }
       }
@@ -32,6 +30,5 @@ module.exports = function transform(arr) {
       massive.push(arr[i])
     }
   }
-  console.log(massive);
   return massive;
 };
