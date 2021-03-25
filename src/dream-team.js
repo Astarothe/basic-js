@@ -1,30 +1,22 @@
 const CustomError = require("../extensions/custom-error");
 
-module.exports = function createDreamTeam(e) {
-  let massive = [];
-  if(typeof(e) !== "object" || e === null){
+module.exports = function createDreamTeam(members) {
+  let dreamName = [];
+  if(typeof(members) !== "object" || members === null){
     return false
   }
-  for(let i = 0; i < e.length; i++){
-    if((typeof(e[i])) !== "string"){
+  for(let i = 0; i < members.length; i++){
+    if(typeof members[i] !== "string"){
       continue;
     }
-    for(let j = 0; j <e[i].length;j++){
-      console.log(e[i][j]);
-      if(e[i][j] !== " "){
-       let perem = e[i][j].toUpperCase();
-        massive.push(perem);
-        console.log(massive);
+    for(let j = 0; j < members[i].length; j++){
+      if(members[i][j] === " "){
+      } else {
+        dreamName.push(members[i][j].toUpperCase());
         break;
       }
     }
   }
-  if(massive.length === 0){
-    return false;
-  }
-
-  console.log(massive);
-  let finaly = massive.sort().join("");
-  console.log(finaly);
-  return finaly;
+  dreamName = dreamName.sort().join("");
+  return dreamName;
 };

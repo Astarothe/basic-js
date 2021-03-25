@@ -1,13 +1,9 @@
 const CustomError = require("../extensions/custom-error");
 
-module.exports = function getSeason(disksNumber,turnsSpeed) {
-if(disksNumber == null){
-return "THROWN"
-}
-
- let turns = 2**disksNumber - 1;
-
- let seconds = Math.floor(turns * 3600 / turnsSpeed);
-
-return {seconds,turns} ;
+module.exports = function calculateHanoi( disksNumber, turnsSpeed ) {
+  let obj = {
+    turns : 2 ** disksNumber - 1,
+    seconds : Math.floor((2 ** disksNumber - 1) / (turnsSpeed / 3600))
+  };
+  return obj;
 };
