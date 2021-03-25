@@ -3,6 +3,10 @@ const CustomError = require("../extensions/custom-error");
 module.exports = function repeater(str, options) {
   let massive = [];
   str = String(str);
+  if(!options.additionSeparator){
+    options.additionSeparator = "|";
+  }
+  
   if(options.repeatTimes === undefined){
     options.repeatTimes = 1;
   }

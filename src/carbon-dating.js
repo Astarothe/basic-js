@@ -12,5 +12,5 @@ module.exports = function dateSample(sampleActivity ) {
   if(t < 0){
     return false;
   }
-  return t;
+  return Math.ceil(t);
 };
